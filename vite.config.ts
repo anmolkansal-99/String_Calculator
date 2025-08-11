@@ -9,9 +9,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
-    // Optional: if you're using Jest-style matchers
     coverage: {
-      provider: 'istanbul' // or 'c8'
+      provider: 'istanbul'
     }
   }
 })
