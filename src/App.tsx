@@ -7,11 +7,12 @@ function App() {
   const [input, setInput] = useState<string>('');
   const [result, setResult] = useState<string>('');
   const [error, setError] = useState<string>('');
+  
 
   const handleCalculate = () => {
     try {
       setError('');
-      const sum = add(input);
+      const sum = add(input.replace(/\\n/g, '\n'));      
       setResult(sum.toString());
     } catch (err) {
       setError(err instanceof Error ? err?.message : String(err));
