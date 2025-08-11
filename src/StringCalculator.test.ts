@@ -30,4 +30,12 @@ describe('add function', () => {
   test('handles non-numeric values as 0', () => {
     expect(add('1,abc,3')).toBe(4);
   });
+
+  test('Special case', () => {
+    expect(add('//[***]\n1***2***3')).toBe(6);
+  });
+
+  test('Special case-2', () => {
+    expect(add('//[*][%]\n1*2%3')).toBe(6);
+  });
 });
